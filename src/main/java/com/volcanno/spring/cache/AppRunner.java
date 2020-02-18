@@ -21,9 +21,11 @@ public class AppRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         logger.info(".... Fetching books");
         logger.info("isbn-1234 -->" + repository.getBookByIsbn("isbn-1234"));
-        logger.info("isbn-4567 -->" + repository.getBookByIsbn("isbn-4567"));
+        repository.getBookByIsbn("isbn-1234");
         logger.info("isbn-1234 -->" + repository.getBookByIsbn("isbn-1234"));
-        logger.info("isbn-4567 -->" + repository.getBookByIsbn("isbn-4567"));
+        logger.info("isbn-1234 -->" + repository.getBookByIsbn("isbn-1234"));
+        repository.updateBook("isbn-1234");
+        logger.info("isbn-1234 -->" + repository.getBookByIsbn("isbn-1234"));
         logger.info("isbn-1234 -->" + repository.getBookByIsbn("isbn-1234"));
         logger.info("isbn-1234 -->" + repository.getBookByIsbn("isbn-1234"));
 

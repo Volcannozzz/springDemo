@@ -12,4 +12,11 @@ public interface BookRepository {
      * @return book
      */
     Book getBookByIsbn(String isbn);
+
+    /**
+     *
+     * @param isbn isbn
+     * @return
+     */
+    Book updateBook(String isbn);
 }

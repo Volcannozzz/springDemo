@@ -1,5 +1,6 @@
 package com.volcanno.spring.cache;
 
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,12 @@ public class SimpleBookRepository implements BookRepository {
     public Book getBookByIsbn(String isbn) {
         syncOperation();
         return new Book(isbn, "Some book");
+    }
+
+    @Override
+    @CachePut("books")
+    public Book updateBook(String isbn) {
+        return new Book("hello ,", "cache.");
     }
 
     private void syncOperation() {
